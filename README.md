@@ -25,26 +25,8 @@ This project implements an **ETL (Extract, Transform, Load)** pipeline using Apa
 ---
 
 ## 📁 Project Structure
-airflow-file-etl/
-│
-├── dags/ # Airflow DAG definitions
-│ └── file_etl_dag.py # Main ETL pipeline DAG
-│
-├── scripts/ # Python ETL scripts
-│ ├── extract.py # Data extraction logic
-│ ├── transform.py # Data transformation logic
-│ └── load.py # Data loading logic
-│
-├── data/ # Data storage
-│ ├── input/
-│ │ └── customers.csv # Raw input data
-│ └── output/ # Transformed output files
-│ └── transformed_customers_*.csv
-│
-├── logs/ # Airflow execution logs
-├── docker-compose.yaml # Docker services configuration
-├── .env # Environment variables
-└── README.md # Project documentation
+<img width="284" height="411" alt="image" src="https://github.com/user-attachments/assets/31b8b28a-10ca-4374-9e10-bfd87db693b9" />
+
 ## 🔄 ETL Process Flow
 Input CSV → Extract → Transform → Load → Output CSV
 
