@@ -75,5 +75,4 @@ The following transformations are applied:
 ### Setup Instructions
 
 **1. Clone the Repository**
-git clone https://github.com/zahra225/airflow-file-etl.git
-cd airflow-file-etl
+git clone (https://github.com/zahra225/airflow-file-etl/edit/my-new-branch)
