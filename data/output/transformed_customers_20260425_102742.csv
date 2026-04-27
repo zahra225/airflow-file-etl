@@ -1,0 +1,6 @@
+customer_id,name,email,age,city,registration_date,spent_amount,transformed_at,segment,is_active
+1,John Doe,john@email.com,35,New York,2024-01-15,250.5,2026-04-25 10:27:40,Adult,True
+2,Jane Smith,jane@email.com,28,Los Angeles,2024-01-20,180.0,2026-04-25 10:27:40,Young,True
+3,Bob Wilson,invalid-email,42,Chicago,2024-02-01,0.0,2026-04-25 10:27:40,Adult,False
+4,Alice Brown,alice@email.com,31,Houston,2024-02-10,0.0,2026-04-25 10:27:40,Adult,False
+5,Charlie Davis,unknown@email.com,29,Phoenix,2024-03-01,75.25,2026-04-25 10:27:40,Young,True

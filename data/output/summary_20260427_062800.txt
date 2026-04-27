@@ -1,0 +1,6 @@
+ETL Pipeline Summary
+===================
+Execution Time: 2026-04-27 06:28:00.626747
+Output File: /opt/airflow/data/output/transformed_customers_20260427_062800.csv
+Record Count: 7
+Columns: ['customer_id', 'name', 'email', 'age', 'city', 'spent_amount', 'transformed_at', 'segment', 'is_active']

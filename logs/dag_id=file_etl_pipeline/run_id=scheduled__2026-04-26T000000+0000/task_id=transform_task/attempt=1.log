@@ -1,0 +1,22 @@
+[2026-04-27T06:27:57.445+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T06:27:57.585+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: file_etl_pipeline.transform_task scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T06:27:57.607+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: file_etl_pipeline.transform_task scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T06:27:57.608+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-04-27T06:27:57.639+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_task> on 2026-04-26 00:00:00+00:00
+[2026-04-27T06:27:57.653+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'file_etl_pipeline', 'transform_task', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/file_etl_dag.py', '--cfg-path', '/tmp/tmpzmrhzo22']
+[2026-04-27T06:27:57.658+0000] {standard_task_runner.py:91} INFO - Job 15: Subtask transform_task
+[2026-04-27T06:27:57.660+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=173) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T06:27:57.661+0000] {standard_task_runner.py:64} INFO - Started process 175 to run task
+[2026-04-27T06:27:57.807+0000] {task_command.py:426} INFO - Running <TaskInstance: file_etl_pipeline.transform_task scheduled__2026-04-26T00:00:00+00:00 [running]> on host f6f91ccb8bc7
+[2026-04-27T06:27:57.977+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team_project' AIRFLOW_CTX_DAG_ID='file_etl_pipeline' AIRFLOW_CTX_TASK_ID='transform_task' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T06:27:57.978+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T06:27:58.208+0000] {transform.py:18} INFO - Starting transformation on 7 records
+[2026-04-27T06:27:58.210+0000] {transform.py:19} INFO - Original columns: ['customer_id', 'name', 'email', 'age', 'city', 'spent_amount']
+[2026-04-27T06:27:58.229+0000] {transform.py:44} INFO - Transformation complete. New columns added: segment, is_active
+[2026-04-27T06:27:58.232+0000] {transform.py:45} INFO - Active customers: 4
+[2026-04-27T06:27:58.268+0000] {python.py:237} INFO - Done. Returned value was: Transformed 7 records
+[2026-04-27T06:27:58.270+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T06:27:58.328+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=file_etl_pipeline, task_id=transform_task, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T062757, end_date=20260427T062758
+[2026-04-27T06:27:58.400+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-04-27T06:27:58.441+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T06:27:58.444+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
