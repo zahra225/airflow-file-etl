@@ -25,3 +25,68 @@ This project implements an **ETL (Extract, Transform, Load)** pipeline using Apa
 ---
 
 ## 📁 Project Structure
+airflow-file-etl/
+│
+├── dags/ # Airflow DAG definitions
+│ └── file_etl_dag.py # Main ETL pipeline DAG
+│
+├── scripts/ # Python ETL scripts
+│ ├── extract.py # Data extraction logic
+│ ├── transform.py # Data transformation logic
+│ └── load.py # Data loading logic
+│
+├── data/ # Data storage
+│ ├── input/
+│ │ └── customers.csv # Raw input data
+│ └── output/ # Transformed output files
+│ └── transformed_customers_*.csv
+│
+├── logs/ # Airflow execution logs
+├── docker-compose.yaml # Docker services configuration
+├── .env # Environment variables
+└── README.md # Project documentation
+## 🔄 ETL Process Flow
+Input CSV → Extract → Transform → Load → Output CSV
+
+### **Extract Task**
+- Reads `customers.csv` from `/data/input/`
+- Validates file existence
+- Loads data into Pandas DataFrame
+
+### **Transform Task**
+The following transformations are applied:
+
+| Operation | Description |
+|-----------|-------------|
+| Missing Email | Fills with 'unknown@email.com' |
+| Missing Age | Fills with median age value |
+| Invalid Email | Marks as 'invalid@email.com' |
+| City Names | Capitalizes and strips whitespace |
+| Age Segment | Creates categories: Young, Adult, Senior |
+| Active Status | Marks customers with spent_amount > 0 |
+| Timestamp | Adds transformation timestamp |
+
+### **Load Task**
+- Saves transformed data to `/data/output/`
+- Creates timestamped filename: `transformed_customers_YYYYMMDD_HHMMSS.csv`
+- Generates summary report
+
+---
+
+## 📊 Sample Data
+
+### Input Data (`customers.csv`)
+
+| customer_id | name | email | age | city | spent_amount |
+|-------------|------|-------|-----|------|--------------|
+| 1 | John Doe | john@email.com | 35 | New York | 250.50 |
+| 2 | Jane Smith | jane@email.com | 28 | Los Angeles | 180.00 |
+| 3 | Bob Wilson | invalid-email | 42 | Chicago | 0 |
+
+### Output Data (After Transformation)
+
+| name | email | age | city | segment | is_active | transformed_at |
+|------|-------|-----|------|---------|-----------|-----------------|
+| John Doe | john@email.com | 35 | New York | Adult | True | 2026-04-25 10:00:00 |
+| Jane Smith | unknown@email.com | 28 | Los Angeles | Young | True | 2026-04-25 10:00:00 |
+| Bob Wilson | invalid@email.com | 42 | Chicago | Adult | False | 2026-04-25 10:00:00 |
