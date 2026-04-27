@@ -72,3 +72,8 @@ The following transformations are applied:
 | John Doe | john@email.com | 35 | New York | Adult | True | 2026-04-25 10:00:00 |
 | Jane Smith | unknown@email.com | 28 | Los Angeles | Young | True | 2026-04-25 10:00:00 |
 | Bob Wilson | invalid@email.com | 42 | Chicago | Adult | False | 2026-04-25 10:00:00 |
+### Setup Instructions
+
+**1. Clone the Repository**
+git clone https://github.com/zahra225/airflow-file-etl.git
+cd airflow-file-etl
